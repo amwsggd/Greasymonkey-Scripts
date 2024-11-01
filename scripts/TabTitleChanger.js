@@ -6,6 +6,7 @@
 // @match        *://*/*
 // @grant        GM_setValue
 // @grant        GM_getValue
+// @grant        GM_deleteValue
 // @run-at       document-idle
 // ==/UserScript==
 
@@ -81,7 +82,8 @@
         // 重置按钮
         resetBtn.onclick = () => {
             document.title = originalTitle;
-            GM_setValue('customTitle_' + window.location.href, '');
+            // GM_setValue('customTitle_' + window.location.href, '');
+            GM_deleteValue('customTitle_' + window.location.href);
             observer.disconnect();
         };
 
