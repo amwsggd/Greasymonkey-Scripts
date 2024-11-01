@@ -167,7 +167,7 @@
 
         // 快捷键
         document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.shiftKey && e.key === 'T') {
+            if (e.ctrlKey && e.shiftKey && e.key === 'F') {
                 e.preventDefault();
                 editBtn.click();
             }
