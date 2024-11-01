@@ -74,14 +74,14 @@
             let newTitle = prompt('输入新标题:', document.title);
             if (newTitle !== null && newTitle.trim() !== '') {
                 document.title = newTitle;
-                GM_setValue('customTitle_' + window.location.hostname, newTitle);
+                GM_setValue('customTitle_' + window.location.href, newTitle);
             }
         };
 
         // 重置按钮
         resetBtn.onclick = () => {
             document.title = originalTitle;
-            GM_setValue('customTitle_' + window.location.hostname, '');
+            GM_setValue('customTitle_' + window.location.href, '');
             observer.disconnect();
         };
 
@@ -153,7 +153,7 @@
 
         // 标题观察器
         const observer = new MutationObserver(() => {
-            let savedTitle = GM_getValue('customTitle_' + window.location.hostname);
+            let savedTitle = GM_getValue('customTitle_' + window.location.href);
             if (savedTitle && document.title !== savedTitle) {
                 document.title = savedTitle;
             }
@@ -182,7 +182,7 @@
         document.body.appendChild(container);
 
         // 应用保存的标题
-        let savedTitle = GM_getValue('customTitle_' + window.location.hostname);
+        let savedTitle = GM_getValue('customTitle_' + window.location.href);
         if (savedTitle) {
             document.title = savedTitle;
         }
