@@ -63,7 +63,7 @@
             transition: all 0.3s;
         `;
 
-        const editBtn = createButton('✎', '修改标题 (Ctrl+Shift+T)');
+        const editBtn = createButton('✎', '修改标题 (Ctrl+Shift+F)');
         const resetBtn = createButton('✕', '取消修改');
         const setDefaultBtn = createButton('⚑', '设为默认位置');
         const dragHandle = createButton('⋮', '拖动');
